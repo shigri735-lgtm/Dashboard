@@ -29,7 +29,7 @@ const ManageTimeline = () => {
     navigateTo("/");
   };
 
-  const {  timeline = [], error, message } = useSelector(
+  const { timeline = [], error, message } = useSelector(
     (state) => state.timeline
   );
 
@@ -40,7 +40,6 @@ const ManageTimeline = () => {
   };
 
   useEffect(() => {
-    // initial fetch
     dispatch(getAllTimeline());
   }, [dispatch]);
 
@@ -63,7 +62,7 @@ const ManageTimeline = () => {
         <TabsContent value="week">
           <Card>
             <CardHeader className="flex gap-4 sm:justify-between sm:flex-row sm:items-center">
-              <CardTitle>Manage Your Timeline</CardTitle>
+              <CardTitle>Manage Client Reviews</CardTitle>
               <Button className="w-fit" onClick={handleReturnToDashboard}>
                 Return to Dashboard
               </Button>
@@ -73,10 +72,10 @@ const ManageTimeline = () => {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Title</TableHead>
-                    <TableHead className="md:table-cell">Description</TableHead>
-                    <TableHead className="md:table-cell">From</TableHead>
-                    <TableHead className="md:table-cell">To</TableHead>
+                    <TableHead>Client</TableHead>
+                    <TableHead className="md:table-cell">Company</TableHead>
+                    <TableHead className="md:table-cell">Role</TableHead>
+                    <TableHead className="md:table-cell">Review</TableHead>
                     <TableHead className="text-right">Action</TableHead>
                   </TableRow>
                 </TableHeader>
@@ -84,33 +83,37 @@ const ManageTimeline = () => {
                 <TableBody>
                   {timeline.length > 0 ? (
                     timeline.map((element) => {
+                      const clientName =
+                        element.clientName || element.title || "Client";
+                      const reviewText =
+                        element.review || element.description || "";
+                      const company =
+                        element.company || element.timeline?.from || "";
+                      const role =
+                        element.role || element.timeline?.to || "";
+
                       return (
                         <TableRow className="bg-accent" key={element._id}>
                           <TableCell className="font-medium">
-                            {element.title}
+                            {clientName}
                           </TableCell>
 
                           <TableCell className="md:table-cell">
-                            {element.description}
+                            {company || "—"}
                           </TableCell>
 
                           <TableCell className="md:table-cell">
-                            {element.timeline.from}
+                            {role || "—"}
                           </TableCell>
 
                           <TableCell className="md:table-cell">
-                            {element.timeline.to
-                              ? element.timeline.to
-                              : "____"}
+                            {reviewText}
                           </TableCell>
 
                           <TableCell className="flex justify-end">
                             <button
-                              className="border-red-600 border-2 rounded-full h-8 w-8 flex 
-                              justify-center items-center text-red-600 hover:text-slate-50 hover:bg-red-600"
-                              onClick={() =>
-                                handleDeleteTimeline(element._id)
-                              }
+                              className="border-red-600 border-2 rounded-full h-8 w-8 flex justify-center items-center text-red-600 hover:text-slate-50 hover:bg-red-600"
+                              onClick={() => handleDeleteTimeline(element._id)}
                             >
                               <Trash2 className="h-5 w-5" />
                             </button>
@@ -120,9 +123,7 @@ const ManageTimeline = () => {
                     })
                   ) : (
                     <TableRow className="text-2xl">
-                      <TableCell>
-                        You have not added any timeline.
-                      </TableCell>
+                      <TableCell>You have not added any reviews.</TableCell>
                     </TableRow>
                   )}
                 </TableBody>

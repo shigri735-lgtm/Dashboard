@@ -312,35 +312,41 @@ const Dashboard = () => {
                 </Card>
                 <Card>
                   <CardHeader className="px-7 flex items-center justify-between flex-row">
-                    <CardTitle>Timeline</CardTitle>
+                    <CardTitle>Client Reviews</CardTitle>
                     <Button onClick={gotoMangeTimeline} className="w-fit">
-                      Manage Timeline
+                      Manage Reviews
                     </Button>
                   </CardHeader>
                   <CardContent>
                     <Table>
                       <TableHeader>
                         <TableRow>
-                          <TableHead>Title</TableHead>
-                          <TableHead className="md:table-cell">From</TableHead>
+                          <TableHead>Client</TableHead>
+                          <TableHead className="md:table-cell">Company</TableHead>
                           <TableHead className="md:table-cell text-right">
-                            To
+                            Role
                           </TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
                         {timeline && timeline.length > 0 ? (
                           timeline.map((element) => {
+                            const clientName =
+                              element.clientName || element.title || "Client";
+                            const company =
+                              element.company || element.timeline?.from || "—";
+                            const role = element.role || element.timeline?.to || "—";
+
                             return (
                               <TableRow className="bg-accent" key={element._id}>
                                 <TableCell className="font-medium">
-                                  {element.title}
+                                  {clientName}
                                 </TableCell>
                                 <TableCell className="md:table-cell">
-                                  {element.timeline.from}
+                                  {company}
                                 </TableCell>
                                 <TableCell className="md:table-cell  text-right">
-                                  {element.timeline.to}
+                                  {role}
                                 </TableCell>
                               </TableRow>
                             );
@@ -348,7 +354,7 @@ const Dashboard = () => {
                         ) : (
                           <TableRow>
                             <TableCell className="text-3xl overflow-y-hidden">
-                              You have not added any timeline.
+                              You have not added any reviews.
                             </TableCell>
                           </TableRow>
                         )}
