@@ -19,7 +19,7 @@ const ViewProject = () => {
   useEffect(() => {
     const getProject = async () => {
       await axios
-        .get(`https://my-portfolio-rose-two-59.vercel.app/api/v1/project/get/${id}`, {
+        .get(`https://backend-beta-ruby-13.vercel.app/api/v1/project/get/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
@@ -127,3 +127,4 @@ const ViewProject = () => {
 };
 
 export default ViewProject;
+

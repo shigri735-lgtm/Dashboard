@@ -9,7 +9,7 @@ import { clearAllUserErrors, register } from "@/store/slices/userSlice";
 import { toast } from "react-toastify";
 import SpecialLoadingButton from "./sub-components/SpecialLoadingButton";
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://my-portfolio-rose-two-59.vercel.app";
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://backend-beta-ruby-13.vercel.app/api/v1";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -201,3 +201,4 @@ const Register = () => {
 };
 
 export default Register;
+

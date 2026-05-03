@@ -169,3 +169,4 @@ const AddSkill = () => {
 };
 
 export default AddSkill;
+

@@ -8,11 +8,11 @@ import HomePage from "./pages/HomePage";
 import ManageSkills from "./pages/ManageSkills";
 import ManageProjects from "./pages/ManageProjects";
 import UpdateProject from "./pages/UpdateProject";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getUser } from "./store/slices/userSlice";
-import ForgotPassword from "./pages/ForgotPassword";
-import ResetPassword from "./pages/ResetPassword";
 import { getAllSkills } from "./store/slices/skillSlice";
 import { getAllSoftwareApplications } from "./store/slices/softwareApplicationSlice";
 import { getAllTimeline } from "./store/slices/timelineSlice";
@@ -52,3 +52,4 @@ function App() {
 }
 
 export default App;
+

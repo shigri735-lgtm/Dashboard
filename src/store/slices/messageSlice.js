@@ -50,7 +50,7 @@
 //   },
 // });
 
-// const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://my-portfolio-rose-two-59.vercel.app/api/v1";
+// const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://backend-beta-ruby-13.vercel.app/api/v1";
 // axios.defaults.withCredentials = true;
 
 // export const getAllMessages = () => async (dispatch) => {
@@ -106,7 +106,7 @@ import axios from "axios";
 
 const API_BASE =
   import.meta.env.VITE_API_BASE_URL ||
-  "https://my-portfolio-rose-two-59.vercel.app/api/v1";
+  "https://backend-beta-ruby-13.vercel.app/api/v1";
 
 axios.defaults.withCredentials = true;
 
@@ -209,3 +209,5 @@ export const resetMessagesSlice = () => (dispatch) => {
 };
 
 export default messageSlice.reducer;
+
+

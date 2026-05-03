@@ -115,3 +115,4 @@ const ManageSkills = () => {
 };
 
 export default ManageSkills;
+
