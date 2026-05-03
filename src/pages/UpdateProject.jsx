@@ -194,12 +194,12 @@ const UpdateProject = () => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="w-full sm:col-span-4">
+                <div className="w-full sm:col-span-4">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
                     Stack
                   </label>
-                  <div className="mt-2"> */}
-                    {/* <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                  <div className="mt-2">
+                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
                       <Select
                         value={stack}
                         onValueChange={(selectedValue) =>
@@ -210,16 +210,15 @@ const UpdateProject = () => {
                           <SelectValue placeholder="Select Project Stack" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="Full Stack">Mate Ad</SelectItem>
-                          <SelectItem value="Mern"></SelectItem>
-                          <SelectItem value="Mean">MEAN</SelectItem>
-                          <SelectItem value="Next.JS">NEXT.JS</SelectItem>
-                          <SelectItem value="React.JS">REACT.JS</SelectItem>
+                          <SelectItem value="Full Stack">All Stack</SelectItem>
+                          <SelectItem value="Mate Ads">Mate Ads</SelectItem>
+                          <SelectItem value="Google Ads">Google Ads</SelectItem>
+                          <SelectItem value="Other">Other</SelectItem>
                         </SelectContent>
                       </Select>
-                    </div> */}
-                  {/* </div> */}
-                {/* </div> */}
+                    </div>
+                  </div>
+                </div>
                 <div className="w-full sm:col-span-4">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
                     Category
